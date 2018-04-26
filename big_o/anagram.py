@@ -74,6 +74,9 @@ re2 = anagram_solution_two("abeds", "aesbd")
 
 
 # Solution Four - Count and Compare
+# comparing the two lists of counts, always takes 26 steps since there are 26 possible
+# characters in the strings. Adding it all up gives us 𝑇 (𝑛) = 2𝑛 + 26 steps.
+# That is 𝑂(𝑛).
 
 def anagram_solution_four(str1, str2):
     c1 = [0]*26
