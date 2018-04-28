@@ -1,4 +1,4 @@
-
+# はじめの文字を大文字に変換しなさい。また最後がピリオド出ない場合、ピリオドを挿入しなさい。
 
 def correct_sentence(text: str) -> str:
     return_text = ""
