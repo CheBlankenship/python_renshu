@@ -26,14 +26,26 @@ class Stack():
         return len(self.items)
 
 
-s = Stack()
+# s = Stack()
 # print(s.is_empty())
 # s.push(4)
 # s.push('dog')
 # print(s)
 
-s.push('x')
-s.push('y')
-s.pop()
-s.push('z')
-print(s.peek())
+# s.push('x')
+# s.push('y')
+# s.pop()
+# s.push('z')
+# print(s.peek())
+
+# an error will occur
+m = Stack()
+m.push('x')
+m.push('y')
+m.push('z')
+print(m)
+while not m.is_empty():
+    m.pop()
+    m.pop()
+
+print(m)
