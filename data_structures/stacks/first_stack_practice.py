@@ -17,7 +17,7 @@ class Stack():
         self.items.append(item)
     #
     def pop(self):
-        self.items.pop()
+        return self.items.pop()
     #
     def peek(self):
         return self.items[len(self.items)-1]
@@ -39,13 +39,13 @@ class Stack():
 # print(s.peek())
 
 # an error will occur
-m = Stack()
-m.push('x')
-m.push('y')
-m.push('z')
-print(m)
-while not m.is_empty():
-    m.pop()
-    m.pop()
-
-print(m)
+# m = Stack()
+# m.push('x')
+# m.push('y')
+# m.push('z')
+# print(m)
+# while not m.is_empty():
+#     m.pop()
+#     m.pop()
+#
+# print(m)
