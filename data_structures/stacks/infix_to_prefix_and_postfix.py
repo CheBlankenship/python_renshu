@@ -14,25 +14,38 @@ from first_stack_practice import Stack
 # Any operators still on the stack can be removed and appended to the end of the output list.
 
 
-# input  -> string(infix format)
-# output -> string(prefix and postfix format)
-
-# 𝐴+𝐵  ->  +𝐴𝐵
-def convert_infix_to_prefix_and_postfix(infix_str):
+def infix_to_postfix(infix_str):
+    prec = {}
+    prec["*"] = 3
+    prec["/"] = 3
+    prec["+"] = 2
+    prec["-"] = 2
+    prec["("] = 1
     op_stack = Stack()
-    infix_list = list(infix_str)
-    output_list = []
-    operand = "+-*/"
-    for i in range(len(infix_list)):
-        if infix_list[i] in operand:
-            output_list.append(infix_list[i])
+    postfix_list = []
+    token_list = list(infix_str.replace(" ", ""))
 
-    return output_list
+    for token in token_list:
+        if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" or token in "0123456789":
+            postfix_list.append(token)
+        elif token == "(":
+            op_stack.push(token)
+        elif token == ")":
+            top_token = op_stack.pop()
+            while top_token != "(":
+                postfix_list.append(top_token)
+                top_token = op_stack.pop()
+        else:
+            while (not op_stack.is_empty()) and (prec[op_stack.peek()] >= prec[token]):
+                postfix_list.append(op_stack.pop())
 
-    # return scan_list(input_list)
-    # return input_list
+            op_stack.push(token)
+
+
+    while not op_stack.is_empty():
+        postfix_list.append(op_stack.pop())
+        return "".join(postfix_list)
 
 
 
-# scan_list(["A", "+", "B"])
-print(convert_infix_to_prefix_and_postfix("𝐴+𝐵"))
+print(infix_to_postfix("( A + B ) * ( C + D )"))
