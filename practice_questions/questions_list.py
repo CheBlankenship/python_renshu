@@ -44,4 +44,6 @@
 #   c - Write a show() method in the class.
 #   d - Override __str__ method so it can print the fraction
 #   e - Override __add__ method so it can concat the fraction
-#
+#       Point - Write down the actuall logic before implementing it.
+#   f - Create a Greatest Common Divisor function and it gcd().
+#       Point - Write down the logic before implementing it.
