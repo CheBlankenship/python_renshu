@@ -17,11 +17,22 @@ from first_stack_practice import Stack
 # input  -> string(infix format)
 # output -> string(prefix and postfix format)
 
-def convert_infix_to_prefix_and_postfix(input_str):
+# 𝐴+𝐵  ->  +𝐴𝐵
+def convert_infix_to_prefix_and_postfix(infix_str):
     op_stack = Stack()
-    input_list = list(input_str)
-    return input_list
+    infix_list = list(infix_str)
+    output_list = []
+    operand = "+-*/"
+    for i in range(len(infix_list)):
+        if infix_list[i] in operand:
+            output_list.append(infix_list[i])
+
+    return output_list
+
+    # return scan_list(input_list)
+    # return input_list
 
 
 
-print(convert_infix_to_prefix_and_postfix("gofd"))
+# scan_list(["A", "+", "B"])
+print(convert_infix_to_prefix_and_postfix("𝐴+𝐵"))
