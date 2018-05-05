@@ -1,4 +1,4 @@
-from first_stack_practice import Stack
+# from first_stack_practice import Stack
 
 
 # Instruction #
@@ -12,6 +12,40 @@ from first_stack_practice import Stack
 #     However, first remove any operators already on the op_stack that have higher or equal precedence and append them to the output list.
 # When the input expression has been completely processed, check the op_stack.
 # Any operators still on the stack can be removed and appended to the end of the output list.
+
+
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def __str__(self):
+        return str(self.items)
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[len(self.items)-1]
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def size(self):
+        return len(self.items)
+
+
+
+
+# s = Stack()
+# s.push("ew")
+# s.push("ww")
+# print(s.size())
+
+
+
 
 
 def infix_to_postfix(infix_str):
