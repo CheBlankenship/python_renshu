@@ -21,17 +21,12 @@ class Node:
 
 
 
-# temp = Node(93)
-# print("Check >> ", temp)
 
 
 class UnorderedList:
 
     def __init__(self):
         self.head = None
-
-    # def __str__(self):
-    #     return str(self.head)
 
     def add(self, item):
         temp = Node(item)
@@ -47,6 +42,9 @@ class UnorderedList:
 
         return count
 
+    def is_empty(self):
+       return self.head == None
+
     def search(self, item):
         current = self.head
         found = False
@@ -58,9 +56,22 @@ class UnorderedList:
 
         return found
 
+    def remove(self, item):
+        current = self.head
+        previous = None
+        found = False
+        while not found:
+            if current.get_data() == item:
+                found = True
+            else:
+                previous = current
+                current = current.get_next()
 
-    def is_empty(self):
-       return self.head == None
+        if previous == None:
+            self.head = current.get_next()
+        else:
+            previous.set_next(current.get_next())
+
 
 
 
