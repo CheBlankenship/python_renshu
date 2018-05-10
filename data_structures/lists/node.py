@@ -7,9 +7,6 @@ class Node:
     def __str__(self):
         return str(self.data)
 
-    def get_data(self):
-        return self.data
-
     def get_next(self):
         return self.next
 
@@ -19,7 +16,8 @@ class Node:
     def set_next(self, new_next):
         self.next = new_next
 
-
+    def get_data(self):
+        return self.data
 
 
 
