@@ -36,15 +36,11 @@ def dec_converter(input_num, converter):
 
     while still_convert:
         if input_num // converter != 0:
-            print("Hit >> ", input_num // converter)
             s.push(str(nums.index(str(input_num % converter))))
             input_num = input_num // converter
-            print("ARR >> ", s)
         else:
-            print("Hit >> ", input_num // converter)
             s.push(str(input_num % converter))
             still_convert = False
-            print("ARR >> ", s)
 
     result = ""
     while s.size() > 0:
@@ -52,5 +48,7 @@ def dec_converter(input_num, converter):
 
     return result
 
-
-print(dec_converter(21, 6))
+# 1. What is the value of 25 expressed as an octal number(8)?
+print(dec_converter(21, 8))
+# 2. What is the value of 256 expressed as a hexidecimal number(16)?
+print(dec_converter(21, 16))
