@@ -13,10 +13,17 @@ def simulation(total_time, pages_per_min):
 
     for current_second in range(total_time):
 
+        # create new print task and put it into the queue.
         if new_print_task():
             t = Task(current_second)
             print_q.enqueue(t)
 
+        # if the printer is not busy and if the queue is not empty,
+        # process the next waiting print task
+        # check how long the task was waiting in the queue and add it to the array.
+        # when the start_next() gets called, it will check how many seconds it will take to complete.
+        # it will set it to busy() = True and current_task = next_task.
+        # When the printer time_remaining gets 0, it will change busy() = False.
         if (not lab_printer.busy()) and (not print_q.is_empty()):
             next_task = print_q.dequeue()
             waiting_time.append(t.wait_time(current_second))
