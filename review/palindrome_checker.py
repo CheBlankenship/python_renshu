@@ -52,3 +52,6 @@ def palindrome_checker(input_str):
 
 input_str = "ccvd"
 print(palindrome_checker(input_str))
+
+input_str = "ccvcc"
+print(palindrome_checker(input_str))
