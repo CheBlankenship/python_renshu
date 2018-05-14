@@ -29,6 +29,7 @@ def infixToPostfix(infixexpr):
     opStack = Stack()
     postfixList = []
     tokenList = infixexpr.split()
+    print(tokenList)
 
     for token in tokenList:
         if token in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" or token in "0123456789":
