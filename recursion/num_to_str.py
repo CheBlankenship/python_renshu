@@ -3,7 +3,8 @@ def to_str(n, base):
     if n < base:
         return convert_string[int(n)]
     else:
-        return to_str(int(n) / base, base) + convert_string[int(n) % base]
+        # Return the next converting number and the remainder.
+        return to_str(int(n) / base, base) + str(convert_string[int(n) % base])
 
 
 print(to_str(16, 2))
