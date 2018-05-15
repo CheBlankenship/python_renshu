@@ -1,8 +1,4 @@
-# def checker():
-
-
-
-def palindrome_checker(input_str):
+def string_converter(input_str):
     matching = True
     input_str = input_str.replace(" ", "").replace("'", "").replace(",", "").replace(".", "")
     input_str = list(input_str)
