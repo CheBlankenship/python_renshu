@@ -1,7 +1,5 @@
-def string_converter(input_str):
+def checker(input_str):
     matching = True
-    input_str = input_str.replace(" ", "").replace("'", "").replace(",", "").replace(".", "")
-    input_str = list(input_str)
     if len(input_str) < 2:
         return True
     else:
@@ -14,5 +12,12 @@ def string_converter(input_str):
 
 
 
+def palindrome_checker(input_str):
+    input_str = input_str.replace(" ", "").replace("'", "").replace(",", "").replace(".", "").upper()
+    input_str = list(input_str)
+    return checker(input_str)
 
-print(palindrome_checker("kayak"))
+
+
+
+print(palindrome_checker("kAyak"))
