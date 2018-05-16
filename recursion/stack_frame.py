@@ -27,4 +27,19 @@ def to_str(n, base):
 
 
 
-print(to_str(10, 2))
+# print(to_str(10, 2))
+
+
+
+
+def n_to_str(num, base):
+    numstr = "0123456789ABCDEF"
+    # When the num comes smaller than the base converter number, just return the num.
+    if num < base:
+        return numstr[num]
+    # Continue making the number smaller.
+    else:
+        return n_to_str(num//base, base) + str(numstr[num % base])
+
+
+print(n_to_str(10, 2))
