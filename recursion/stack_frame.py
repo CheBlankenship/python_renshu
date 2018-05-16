@@ -21,7 +21,7 @@ def to_str(n, base):
     #
     res = ""
     while not stk.is_empty():
-        res = stk
+        res = res + str(stk.pop())
 
     return res
 
