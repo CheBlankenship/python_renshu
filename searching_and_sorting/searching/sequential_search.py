@@ -1,4 +1,6 @@
-# O(n)
+# Best Case   : O(1)
+# AVG Case    : O(n/2)
+# Worst Case  : O(n)
 def sequential_search(item_list, item):
     position = 0
     found = False
