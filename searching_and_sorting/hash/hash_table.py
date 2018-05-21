@@ -5,11 +5,11 @@ class HashTable:
         self.slots = [None] * self.size
         self.data = [None] * self.size
 
-    def __repr__(self):
-        return str(self.data)
-
-    def __str__(self):
-        return str(self.data)
+    # def __repr__(self):
+    #     return str(self.data)
+    #
+    # def __str__(self):
+    #     return str(self.data)
 
     def hash_function(self, key, size):
         return key % size
@@ -71,4 +71,5 @@ h = HashTable()
 h[54] = "cat"
 h[26] = "dog"
 
-print(h)
+print(h.data)
+print(h.slots)
