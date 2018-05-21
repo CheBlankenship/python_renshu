@@ -1,3 +1,4 @@
+# O(logn)
 def binary_search(num_list, num):
     first = 0
     last = len(num_list) - 1
