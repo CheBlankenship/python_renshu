@@ -32,6 +32,23 @@ num_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 # :
 # num = 0, li_index = 0
 
+print("Result 1 >> ", bubble_sort(num_list))
 
 
-print(bubble_sort(num_list))
+# Author's Example
+
+def sort_bubble_sort(num_list):
+    exchanges = True
+    pass_num = len(num_list) - 1
+    while pass_num > 0 and exchanges:
+        exchanges = False
+        for i in range(pass_num):
+            if num_list[i] > num_list[i + 1]:
+                exchanges = True
+                num_list[i], num_list[i + 1] = num_list[i + 1], num_list[i]
+
+    return num_list
+
+
+
+print("Result 2 >> ", sort_bubble_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
