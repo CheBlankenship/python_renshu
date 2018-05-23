@@ -1,3 +1,4 @@
+# Time complexity : 𝑂(𝑛) ~ 𝑂(𝑛2)
 def shell_sort(num_list):
     sublist_count = len(num_list) // 2
     while sublist_count > 0:
@@ -25,3 +26,7 @@ def gap_insertion_sort(num_list, start, gap):
 
 num_list = [4, 53, 65, 77, 87, 88, 90, 7686]
 print(shell_sort(num_list))
+
+# Process #
+# num_list = [...], start_position(start) = 0, sublist_count(gap) = 4
+# num_list = [...], start_position(start) = 0, sublist_count(gap) = 4
