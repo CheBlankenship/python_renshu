@@ -31,6 +31,7 @@ def merge_sort(num_list):
             j = j + 1
             k = k + 1
 
+    print("Merge >> ", num_list)
 
     return num_list
 
