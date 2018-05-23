@@ -25,7 +25,7 @@ num_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 # .........
 # [54, 26, (93), 17, (77), 31, 44, 55, 20] , ps = 2, lo = 8, F
 # After the second for loop #
-# Replace list[ps]...93 and list[fill_slot]...20
+# Replace list[ps]...93 and list[fill_slot(last index of the array)]...20
 
 
 print(selection_sort(num_list))
