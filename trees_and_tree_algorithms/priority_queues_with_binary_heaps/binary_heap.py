@@ -73,5 +73,13 @@ bh.build_heap([5, 9, 11, 14, 18, 19, 21, 33, 17, 27])
 #        - 18
 #             - 27
 
+bh.insert(7)
+# Integer 7 will be in the level 4 second branch right.[11]
+# The parent node for 7 is 18 which index is [5].
+# Swap 7 and 18
+# The parent node for 7 changes to 9 which index is [2].
+# Swap 7 and 9
+# Parent node for 7 changes to 5
+# 5 is smaller than 7 so it will remain the way it is.
 
 print(bh)
