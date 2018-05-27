@@ -4,6 +4,12 @@ class BinaryHeap:
         self.heap_list  = [0]
         self.current_size = 0
 
+    def __repr__(self):
+        return str(self.heap_list)
+
+    def __str__(self):
+        return str(self.heap_list)
+
     def percolate_up(self, i):
         while i // 2 > 0:
             if self.heap_list[i] < self.heap_list[i // 2]:
@@ -29,7 +35,7 @@ class BinaryHeap:
 
     def min_child(self, i):
         if i * 2 + 1 > self.current_size:
-            pass i * 2
+            return i * 2
         else:
             if self.heap_list[i * 2] < self.heap_list[i * 2 + 1]:
                 return i * 2
@@ -51,3 +57,21 @@ class BinaryHeap:
         while (i > 0):
             self.percolate_down(i)
             i = i - 1
+
+
+
+bh = BinaryHeap()
+bh.build_heap([5, 9, 11, 14, 18, 19, 21, 33, 17, 27])
+# 0
+# 5 - 11
+#        - 19
+#        - 21
+#   - 9
+#        - 14
+#             - 33
+#             - 17
+#        - 18
+#             - 27
+
+
+print(bh)
