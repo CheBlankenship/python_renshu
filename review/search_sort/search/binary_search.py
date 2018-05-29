@@ -37,9 +37,9 @@ def b_search(item_list, search_v):
             return True
         else:
             if search_v > item_list[mid]:
-                return b_search(item_list[mid : ], search_v)
+                return b_search(item_list[mid + 1: ], search_v)
             else:
-                return b_search(item_list[:mid - 1], search_v)
+                return b_search(item_list[ : mid], search_v)
 
 
 
