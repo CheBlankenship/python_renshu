@@ -3,6 +3,11 @@
 # Avg case  :
 # Worst case:
 
+
+# Even though a binary search is generally better than a sequential search,
+# it is important to note that for small values of 𝑛,
+# the additional cost of sorting is probably not worth it.
+
 def binary_search(item_list, search_v):
     start = 0
     last = len(item_list) - 1
