@@ -23,6 +23,7 @@ class BinaryHeap:
         self.heap_list.append(k)
         self.current_size = self.current_size + 1
         self.percolate_up(self.current_size)
+        return None
 
     def percolate_down(self, i):
         while (i * 2) <= self.current_size:
