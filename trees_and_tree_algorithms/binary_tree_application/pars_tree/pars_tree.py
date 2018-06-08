@@ -1,3 +1,5 @@
+## Pars Tree ##
+
 # 1. Create an empty tree.
 # 2. Read ( as the first token.
 # By rule 1, create a new node as the left child of the root. Make the current node this new child.
@@ -16,11 +18,30 @@
 # 9. Read ) as the next token.
 # By rule 4 we make the parent of * the current node.
 # 10. Read ) as the next token.
-# By rule 4 we make the parent of + the current node. At this
-point there is no parent for + so we are done.
+# By rule 4 we make the parent of + the current node. At this point there is no parent for + so we are done.
 
-class ClassName(object):
-    """docstring for ."""
-    def __init__(self, arg):
-        super(, self).__init__()
-        self.arg = arg
+from stack import Stack
+from binary_tree import BinaryTree
+
+def conv_list(input):
+    li = []
+    concat_num = ""
+    for item in input:
+        if item in "()+*-/":
+            if len(concat_num) > 0 :
+                li.append(concat_num)
+                concat_num = ""
+
+            li.append(item)
+        else:
+            concat_num = concat_num + item
+
+    return li
+
+print(conv_list("((10+5)*3)"))
+
+
+def build_pars_tree(fp_exp):
+    return str(fp_list)
+
+# print(build_pars_tree("((10+5)*3)"))
