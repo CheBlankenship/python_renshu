@@ -7,7 +7,7 @@
 # get_left_child()
 # get_root_value()
 # get_right_child()
-# set_root_value(): type str() or int()
+# set_root_value(new_root_value): type str() or int()
 
 
 
