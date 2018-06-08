@@ -1,3 +1,16 @@
+## BinaryTree ##
+# init argument (root): type str() or int().
+# Modules you can access
+# print()
+# insert_left(new_node_value): type str() or int()
+# insert_right(new_node_value): type str() or int()
+# get_left_child()
+# get_root_value()
+# get_right_child()
+# set_root_value(): type str() or int()
+
+
+
 class BinaryTree:
 
     def __init__(self, root):
@@ -32,13 +45,25 @@ class BinaryTree:
         return None
 
     def get_right_child(self):
-        return str(self.right_child)
+        return self.right_child
 
     def get_left_child(self):
-        return str(self.right_child)
+        return self.left_child
 
     def set_root_value(self, obj):
         self.key = obj
 
     def get_root_value(self):
         return self.key
+
+
+# bt = BinaryTree(1)
+# print("root: ", bt.get_root_value())
+# bt.insert_left(2)
+# print("left: ", bt.get_left_child())
+# bt.insert_right(3)
+# print("right: ", bt.get_right_child())
+# print("left child root: ", bt.get_left_child().get_root_value())
+# print("right child root: ", bt.get_right_child().get_root_value())
+# bt.get_left_child().set_root_value(100)
+# print("updated result for left ch root: ", bt.get_left_child().get_root_value())
