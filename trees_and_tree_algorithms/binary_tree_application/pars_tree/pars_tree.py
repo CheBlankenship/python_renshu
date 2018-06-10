@@ -56,7 +56,7 @@ def build_pars_tree(fp_exp):
 
     return e_tree
 
-print("return ", build_pars_tree("((10+5)*3)"))
+parse_tree = build_pars_tree("((10+5)*3)")
 
 
 def evaluate(parse_tree):
@@ -74,3 +74,7 @@ def evaluate(parse_tree):
         return fn(evaluate(left), evaluate(right))
     else:
         return parse_tree.get_root_value()
+
+
+print(evaluate(parse_tree))
+#
