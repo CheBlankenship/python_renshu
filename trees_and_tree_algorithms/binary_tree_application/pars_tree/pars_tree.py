@@ -58,6 +58,9 @@ def build_pars_tree(fp_exp):
 
 parse_tree = build_pars_tree("((10+5)*3)")
 
+# *
+#   - 15
+#   - 3
 
 def evaluate(parse_tree):
     opers = {}
