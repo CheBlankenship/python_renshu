@@ -29,38 +29,44 @@ def build_pars_tree(fp_exp):
     e_tree  = BinaryTree("")
     p_stack.push(e_tree)
     current_tree = e_tree
+    step = 0
     for i in fp_list:
-        # print("i >> ", i)
+        step = step + 1
+        print("{step ", step, "}", i)
         if i == "(":
-            # print("HIT 1")
             current_tree.insert_left("")
+            print("current_tree : ", current_tree.get_root_value(), current_tree.get_left_child(), current_tree.get_right_child())
             p_stack.push(current_tree)
+            print("stack :", p_stack)
             current_tree = current_tree.get_left_child()
         elif i in "+-*/":
-            # print("HIT 2")
             current_tree.set_root_value(i)
             current_tree.insert_right('')
+            print("current_tree ; ", current_tree.get_root_value(), current_tree.get_left_child(), current_tree.get_right_child())
             p_stack.push(current_tree)
+            print("stack :", p_stack)
             current_tree = current_tree.get_right_child()
         elif i == ")":
-            # print("HIT 3")
             current_tree = p_stack.pop()
+            print("stack :", p_stack)
         elif i not in "()+*-/":
-            # print("HIT 4")
             current_tree.set_root_value(int(i))
+            print("stackk :", p_stack.size())
             parent = p_stack.pop()
+            print("stack :", p_stack)
+            print("Current tree >> ", "[", current_tree.get_root_value() ,current_tree.get_left_child(), current_tree.get_right_child(), "]")
+            print("parent       >> ", "[", parent.get_root_value() ,parent.get_left_child(), parent.get_right_child(), "]")
             current_tree = parent
+            print("current      >>> ", "[", current_tree.get_root_value() ,current_tree.get_left_child(), current_tree.get_right_child(), "]")
+            print("Previouse >> ", parent.get_left_child())
         else:
-            # print("HIT 5")
             raise Exception("ValueError")
 
+    print("Tree >> ", e_tree.get_root_value(), e_tree.get_left_child(), e_tree.get_right_child(), e_tree.get_left_child().get_left_child(), e_tree.get_left_child().get_right_child())
     return e_tree
 
-parse_tree = build_pars_tree("((10+5)*3)")
+parse_tree = build_pars_tree("(10+5)")
 
-# *
-#   - 15
-#   - 3
 
 def evaluate(parse_tree):
     opers = {}
@@ -74,6 +80,7 @@ def evaluate(parse_tree):
 
     if left and right:
         fn = opers[parse_tree.get_root_value()]
+        # fn = add(left, right) || sub(left, right) || mul(left, right) || truediv(left, right)
         return fn(evaluate(left), evaluate(right))
     else:
         return parse_tree.get_root_value()

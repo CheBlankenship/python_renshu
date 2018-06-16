@@ -9,7 +9,7 @@
 # get_right_child()
 # set_root_value(new_root_value): type str() or int()
 
-
+from stack import Stack
 
 class BinaryTree:
 
@@ -56,14 +56,25 @@ class BinaryTree:
     def get_root_value(self):
         return self.key
 
-
+# stk = Stack()
 # bt = BinaryTree(1)
-# print("root: ", bt.get_root_value())
-# bt.insert_left(2)
-# print("left: ", bt.get_left_child())
-# bt.insert_right(3)
-# print("right: ", bt.get_right_child())
-# print("left child root: ", bt.get_left_child().get_root_value())
-# print("right child root: ", bt.get_right_child().get_root_value())
-# bt.get_left_child().set_root_value(100)
+# current_tree = bt
+# current_tree.insert_left(None)
+# current_tree.insert_right(None)
+# print("root: ", current_tree.get_root_value())
+# print("left: ", current_tree.get_left_child())
+# print("right: ", current_tree.get_right_child())
+# current_tree.insert_left(2)
+# print("root no change: ", current_tree.get_root_value())
+# print("left inserted: ", current_tree.get_left_child())
+# print("right no change: ", current_tree.get_right_child())
+# stk.push(current_tree)
+# current_tree = current_tree.get_left_child()
+# print("left: ", current_tree.get_left_child()) # None
+# print("right: ", current_tree.get_right_child()) # None
+# # current_tree.get_left_child().set_root_value(100)
+# current_tree.insert_left(3)
+#
+# current_tree = stk.pop()
+#
 # print("updated result for left ch root: ", bt.get_left_child().get_root_value())
