@@ -20,6 +20,12 @@ class Stack:
             self.items.pop(0)
 
     def peek(self):
+        if (not self.is_empty()):
+            return self.items[-1]
+        else:
+            return None
+
+    def size(self):
         return len(self.items)
 
     def is_empty(self):
