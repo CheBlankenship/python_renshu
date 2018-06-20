@@ -32,41 +32,37 @@ def build_pars_tree(fp_exp):
     step = 0
     for i in fp_list:
         step = step + 1
-        print("{step ", step, "}", i)
         if i == "(":
             current_tree.insert_left("")
-            print("current_tree : ", current_tree.get_root_value(), current_tree.get_left_child(), current_tree.get_right_child())
             p_stack.push(current_tree)
-            print("stack :", p_stack)
             current_tree = current_tree.get_left_child()
         elif i in "+-*/":
             current_tree.set_root_value(i)
             current_tree.insert_right('')
-            print("current_tree ; ", current_tree.get_root_value(), current_tree.get_left_child(), current_tree.get_right_child())
             p_stack.push(current_tree)
-            print("stack :", p_stack)
             current_tree = current_tree.get_right_child()
         elif i == ")":
             current_tree = p_stack.pop()
-            print("stack :", p_stack)
         elif i not in "()+*-/":
             current_tree.set_root_value(int(i))
-            print("stackk :", p_stack.size())
             parent = p_stack.pop()
-            print("stack :", p_stack)
-            print("Current tree >> ", "[", current_tree.get_root_value() ,current_tree.get_left_child(), current_tree.get_right_child(), "]")
-            print("parent       >> ", "[", parent.get_root_value() ,parent.get_left_child(), parent.get_right_child(), "]")
             current_tree = parent
-            print("current      >>> ", "[", current_tree.get_root_value() ,current_tree.get_left_child(), current_tree.get_right_child(), "]")
-            print("Previouse >> ", parent.get_left_child())
         else:
             raise Exception("ValueError")
 
-    print("Tree >> ", e_tree.get_root_value(), e_tree.get_left_child(), e_tree.get_right_child(), e_tree.get_left_child().get_left_child(), e_tree.get_left_child().get_right_child())
     return e_tree
 
-parse_tree = build_pars_tree("(10+5)")
+parse_tree = build_pars_tree("(10+5)+(100+50)")
 
+print("root     ", parse_tree.get_root_value())
+print("check l  ", parse_tree.get_left_child())
+print("check l l", parse_tree.get_left_child().get_left_child())
+print("check l r", parse_tree.get_left_child().get_right_child())
+print("check r  ", parse_tree.get_right_child())
+print("check r l", parse_tree.get_right_child().get_left_child())
+print("check r r", parse_tree.get_right_child().get_right_child())
+# print("check ", parse_tree)
+# print("check ", parse_tree)
 
 def evaluate(parse_tree):
     opers = {}
@@ -88,3 +84,37 @@ def evaluate(parse_tree):
 
 print(evaluate(parse_tree))
 #
+
+
+
+def inorder(tree):
+    t_str = ""
+    if tree:
+        t_str = "(" + inorder(tree.get_left_child())
+        t_str = t_str + str(tree.get_root_value())
+        t_str = inorder(tree.get_right_child()) + ")"
+
+    return t_str
+
+
+# print("Result >>", inorder(parse_tree))
+
+
+def preorder(tree):
+    if tree:
+        print("Root >> ", tree.get_root_value())
+        preorder(tree.get_left_child())
+        preorder(tree.get_right_child())
+
+
+# print("Result >> ", preorder(parse_tree))
+
+
+
+def postorder(tree):
+    if tree:
+        postorder(tree.get_left_child())
+        postorder(tree.get_right_child())
+        print("Root >> ", tree.get_root_value())
+
+# print("Result >> ", postorder(parse_tree))
