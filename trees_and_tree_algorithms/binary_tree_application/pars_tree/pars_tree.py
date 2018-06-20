@@ -52,7 +52,7 @@ def build_pars_tree(fp_exp):
 
     return e_tree
 
-parse_tree = build_pars_tree("(10+5)+(100+50)")
+parse_tree = build_pars_tree("((10+5)+(100+50))")
 
 print("root     ", parse_tree.get_root_value())
 print("check l  ", parse_tree.get_left_child())
