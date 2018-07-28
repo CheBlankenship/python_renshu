@@ -1,5 +1,5 @@
 
-
+# Time complexity : O(n^2)
 
 def insertion_sort(arr):
     # Start out from second index.
